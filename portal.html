@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Patient Portal — GODSLOVE</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="container">
+    <header class="header">
+      <div class="brand"><div class="logo">GL</div><div><div class="site-title">GODSLOVE Hospital</div></div></div>
+      <nav class="nav"><a class="link" href="index.html">Home</a><a class="link" href="appointments.html">Book</a></nav>
+    </header>
+
+    <section class="card" style="max-width:900px;margin:28px auto">
+      <div style="display:flex;justify-content:space-between;align-items:center">
+        <h2>Patient Portal</h2>
+        <div><button id="logoutBtn" class="link">Logout</button></div>
+      </div>
+
+      <p class="muted">Logged in as: <span id="portalEmail"></span></p>
+
+      <div style="margin-top:16px">
+        <h3>Your Appointments</h3>
+        <ul id="portalAppointments" style="margin-top:12px"></ul>
+      </div>
+
+      <div style="margin-top:18px">
+        <h3>Medical Records </h3>
+        <div class="card">
+          <div class="muted">records stored </div>
+          <ul style="margin-top:8px">
+            <li class="list">2025-08-01 — Blood Test: Normal</li>
+            <li class="list">2025-07-15 — X-ray: Clear</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <div class="muted">© GODSLOVE Hospital</div>
+   
+    </footer>
+  </div>
+  <script src="scripts.js"></script>
+</body>
+</html>
+

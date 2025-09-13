@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Admin Dashboard — GODSLOVE</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="container">
+    <header class="header">
+      <div class="brand"><div class="logo">GODSLOVE</div><div><div class="site-title">GODSLOVE Admin</div></div></div>
+      <nav class="nav"><a class="link" href="index.html">Home</a><a class="link" href="doctors.html">Manage Doctors</a><button id="adminLogout" class="link">Logout</button></nav>
+    </header>
+
+    <section class="card" style="max-width:1000px;margin:28px auto">
+      <div style="display:flex;justify-content:space-between;align-items:center">
+        <h2>Admin Dashboard</h2>
+        <div class="muted">Manage appointments & doctors</div>
+      </div>
+
+      <div style="margin-top:16px">
+        <h3>All Appointments</h3>
+        <ul id="adminAppts" style="margin-top:12px"></ul>
+      </div>
+
+      <div style="margin-top:18px">
+        <h3>Quick Stats</h3>
+        <div class="grid-3" style="margin-top:12px">
+          <div class="card">
+            <div class="muted">Total Appointments</div>
+            <div id="statAppts" style="font-size:22px;font-weight:700;margin-top:8px">—</div>
+          </div>
+          <div class="card">
+            <div class="muted">Total Doctors</div>
+            <div id="statDocs" style="font-size:22px;font-weight:700;margin-top:8px">—</div>
+          </div>
+          <div class="card">
+            <div class="muted">Registered Patients</div>
+            <div id="statUsers" style="font-size:22px;font-weight:700;margin-top:8px">—</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer"><div class="muted">Admin panel </div></footer>
+  </div>
+
+  <script>
+    // small admin stat updater
+    function updateStats(){
+      const appts = JSON.parse(localStorage.getItem('hs_appointments')||'[]');
+      const docs = JSON.parse(localStorage.getItem('hs_doctors')||'[]');
+      const users = JSON.parse(localStorage.getItem('hs_users')||'[]');
+      document.getElementById('statAppts').textContent = appts.length;
+      document.getElementById('statDocs').textContent = docs.length;
+      document.getElementById('statUsers').textContent = users.length;
+    }
+    updateStats();
+    // refresh admin appointments when scripts.js renders them
+    window.addEventListener('storage', ()=> updateStats());
+  </script>
+
+  <script src="scripts.js"></script>
+</body>
+</html>
+

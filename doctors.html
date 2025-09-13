@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Doctors — GODSLOVE</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="container">
+    <header class="header">
+      <div class="brand"><div class="logo">HS</div><div><div class="site-title">GODSLOVE Hospital</div></div></div>
+      <nav class="nav"><a class="link" href="index.html">Home</a><a class="link" href="appointments.html">Book</a><a class="link" href="admin-login.html">Admin</a></nav>
+    </header>
+
+    <section class="card" style="max-width:900px;margin:28px auto">
+      <div style="display:flex;justify-content:space-between;align-items:center">
+        <h2>Manage Doctors</h2>
+        <div class="muted">Add or remove doctors </div>
+      </div>
+
+      <div style="margin-top:12px">
+        <form id="addDoctorForm" style="display:flex;gap:10px">
+          <input id="docName" placeholder="Doctor name" required />
+          <input id="docSpecialty" placeholder="Specialty" required />
+          <button class="btn" type="submit">Add Doctor</button>
+        </form>
+      </div>
+
+      <div style="margin-top:14px">
+        <h3>All Doctors</h3>
+        <ul id="doctorList" style="margin-top:12px"></ul>
+      </div>
+    </section>
+
+    <footer class="footer"><div class="muted">© GODSLOVE — doctor management</div></footer>
+  </div>
+
+  <script src="scripts.js"></script>
+</body>
+</html>
+
